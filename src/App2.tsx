@@ -136,7 +136,7 @@ function App() {
 
           {/* Colonne gauche — branding */}
           <div
-            className="col-lg-4 d-none d-lg-flex flex-column justify-content-between text-white p-4"
+            className="col-12 col-lg-4 d-flex flex-column justify-content-between text-white p-4"
             style={{ background: '#1a1a2e' }}
           >
             <div>
@@ -162,7 +162,7 @@ function App() {
           </div>
 
           {/* Colonne droite — formulaire */}
-          <div className="col-lg-8">
+          <div className="col-12 col-lg-8">
             <div className="p-4 p-md-5">
 
               {envoye ? (
@@ -179,7 +179,7 @@ function App() {
                   <form onSubmit={handleSubmit} noValidate>
 
                     <div className="row g-3 mb-3">
-                      <div className="col-12 col-sm-6 col-lg-4">
+                      <div className="col-6 col-lg-4">
                         <label htmlFor="Nom" className="form-label small text-secondary">Nom</label>
                         <input
                           type="text"
@@ -189,7 +189,7 @@ function App() {
                           onChange={(e) => setNom(e.target.value)}
                         />
                       </div>
-                      <div className="col-12 col-sm-6 col-lg-4">
+                      <div className="col-6 col-lg-4">
                         <label htmlFor="Age" className="form-label small text-secondary">Date de naissance</label>
                         <input
                           type="date"
@@ -199,7 +199,7 @@ function App() {
                           onChange={(e) => setAge(e.target.value)}
                         />
                       </div>
-                      <div className="col-12 col-sm-6 col-lg-4">
+                      <div className="col-12 col-lg-4">
                         <label htmlFor="Lieu" className="form-label small text-secondary">Lieu</label>
                         <input
                           type="text"
@@ -213,7 +213,7 @@ function App() {
                     </div>
 
                     <div className="row g-3 mb-3">
-                      <div className="col-12 col-sm-6">
+                      <div className="col-6">
                         <label htmlFor="Email" className="form-label small text-secondary">Email</label>
                         <input
                           type="email"
@@ -224,7 +224,7 @@ function App() {
                         />
                         {emailError && <div className="invalid-feedback">{emailError}</div>}
                       </div>
-                      <div className="col-12 col-sm-6">
+                      <div className="col-6">
                         <label htmlFor="Tel" className="form-label small text-secondary">Téléphone</label>
                         <input
                           type="tel"
@@ -237,7 +237,7 @@ function App() {
                     </div>
 
                     <div className="row g-3 mb-3">
-                      <div className="col-12 col-sm-6">
+                      <div className="col-6">
                         <label htmlFor="Profession" className="form-label small text-secondary">Profession</label>
                         <input
                           type="text"
@@ -247,7 +247,7 @@ function App() {
                           onChange={(e) => setProfession(e.target.value)}
                         />
                       </div>
-                      <div className="col-12 col-sm-6">
+                      <div className="col-6">
                         <label htmlFor="Residence" className="form-label small text-secondary">Résidence</label>
                         <select
                           id="Residence"
@@ -268,7 +268,7 @@ function App() {
                     </div>
 
                     <div className="row g-3 mb-2">
-                      <div className="col-12 col-sm-6">
+                      <div className="col-6">
                         <label htmlFor="Password" className="form-label small text-secondary">Mot de passe</label>
                         <input
                           type="password"
@@ -279,7 +279,7 @@ function App() {
                         />
                         {passwordError && <div className="invalid-feedback">{passwordError}</div>}
                       </div>
-                      <div className="col-12 col-sm-6">
+                      <div className="col-6">
                         <label htmlFor="Password2" className="form-label small text-secondary">Confirmation</label>
                         <input
                           type="password"
