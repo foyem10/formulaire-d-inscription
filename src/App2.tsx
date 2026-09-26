@@ -129,20 +129,26 @@ function App() {
     }
   }
 
+  const fieldRowStyle: React.CSSProperties = { display: 'flex', flexWrap: 'nowrap', gap: '0.75rem' }
+  const field3Style: React.CSSProperties = { flex: '1 1 33.333%', minWidth: 0 }
+  const field2Style: React.CSSProperties = { flex: '1 1 50%', minWidth: 0 }
+
   return (
-    <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light p-3">
-      <div className="card shadow-sm border-0 overflow-hidden" style={{ maxWidth: '950px', width: '100%' }}>
-        <div className="row g-0">
+    <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa', overflowX: 'auto', padding: '1rem' }}>
+      <div
+        className="card shadow-sm border-0 overflow-hidden mx-auto"
+        style={{ width: '950px', minWidth: '950px' }}
+      >
+        <div style={{ display: 'flex', flexWrap: 'nowrap' }}>
 
           {/* Colonne gauche — branding */}
           <div
-            className="col-12 col-lg-4 d-flex flex-column justify-content-between text-white p-4"
-            style={{ background: '#1a1a2e' }}
+            className="d-flex flex-column justify-content-between text-white p-4"
+            style={{ background: '#1a1a2e', flex: '0 0 316px', width: '316px' }}
           >
             <div>
               <div className="d-flex align-items-center gap-2 mb-5">
                 <i className="bi bi-person-circle fs-4"></i>
-                
               </div>
               <h1 className="h4 fw-semibold mb-3">Rejoignez la communauté</h1>
               <p className="small" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -162,7 +168,7 @@ function App() {
           </div>
 
           {/* Colonne droite — formulaire */}
-          <div className="col-12 col-lg-8">
+          <div style={{ flex: '0 0 634px', width: '634px' }}>
             <div className="p-4 p-md-5">
 
               {envoye ? (
@@ -173,13 +179,12 @@ function App() {
                 </div>
               ) : (
                 <>
-                  
                   <h2 className="h5 fw-semibold mb-4">Informations du compte</h2>
 
                   <form onSubmit={handleSubmit} noValidate>
 
-                    <div className="row g-3 mb-3">
-                      <div className="col-6 col-lg-4">
+                    <div style={{ ...fieldRowStyle, marginBottom: '0.75rem' }}>
+                      <div style={field3Style}>
                         <label htmlFor="Nom" className="form-label small text-secondary">Nom</label>
                         <input
                           type="text"
@@ -189,7 +194,7 @@ function App() {
                           onChange={(e) => setNom(e.target.value)}
                         />
                       </div>
-                      <div className="col-6 col-lg-4">
+                      <div style={field3Style}>
                         <label htmlFor="Age" className="form-label small text-secondary">Date de naissance</label>
                         <input
                           type="date"
@@ -199,7 +204,7 @@ function App() {
                           onChange={(e) => setAge(e.target.value)}
                         />
                       </div>
-                      <div className="col-12 col-lg-4">
+                      <div style={field3Style}>
                         <label htmlFor="Lieu" className="form-label small text-secondary">Lieu</label>
                         <input
                           type="text"
@@ -212,8 +217,8 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="row g-3 mb-3">
-                      <div className="col-6">
+                    <div style={{ ...fieldRowStyle, marginBottom: '0.75rem' }}>
+                      <div style={field2Style}>
                         <label htmlFor="Email" className="form-label small text-secondary">Email</label>
                         <input
                           type="email"
@@ -224,7 +229,7 @@ function App() {
                         />
                         {emailError && <div className="invalid-feedback">{emailError}</div>}
                       </div>
-                      <div className="col-6">
+                      <div style={field2Style}>
                         <label htmlFor="Tel" className="form-label small text-secondary">Téléphone</label>
                         <input
                           type="tel"
@@ -236,8 +241,8 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="row g-3 mb-3">
-                      <div className="col-6">
+                    <div style={{ ...fieldRowStyle, marginBottom: '0.75rem' }}>
+                      <div style={field2Style}>
                         <label htmlFor="Profession" className="form-label small text-secondary">Profession</label>
                         <input
                           type="text"
@@ -247,7 +252,7 @@ function App() {
                           onChange={(e) => setProfession(e.target.value)}
                         />
                       </div>
-                      <div className="col-6">
+                      <div style={field2Style}>
                         <label htmlFor="Residence" className="form-label small text-secondary">Résidence</label>
                         <select
                           id="Residence"
@@ -267,8 +272,8 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="row g-3 mb-2">
-                      <div className="col-6">
+                    <div style={{ ...fieldRowStyle, marginBottom: '0.5rem' }}>
+                      <div style={field2Style}>
                         <label htmlFor="Password" className="form-label small text-secondary">Mot de passe</label>
                         <input
                           type="password"
@@ -279,7 +284,7 @@ function App() {
                         />
                         {passwordError && <div className="invalid-feedback">{passwordError}</div>}
                       </div>
-                      <div className="col-6">
+                      <div style={field2Style}>
                         <label htmlFor="Password2" className="form-label small text-secondary">Confirmation</label>
                         <input
                           type="password"
