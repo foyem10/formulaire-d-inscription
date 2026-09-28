@@ -100,7 +100,7 @@ function App() {
     setChargement(true)
 
     try {
-      const response = await fetch('http://localhost:8000/api/utilisateurs', {
+      const response = await fetch('https://formulaire-d-inscription-api-production.up.railway.app/api/utilisateurs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
