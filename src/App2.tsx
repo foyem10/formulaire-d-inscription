@@ -185,18 +185,31 @@ function App() {
         }
         .password-toggle {
           position: absolute;
-          right: 0.5rem;
+          right: 0.25rem;
           top: 50%;
           transform: translateY(-50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
           background: none;
           border: none;
+          border-radius: 0.25rem;
           color: #6c757d;
-          padding: 0.25rem 0.5rem;
+          padding: 0;
           cursor: pointer;
           z-index: 5;
+          font-size: 1rem;
+          line-height: 1;
         }
         .password-toggle:hover {
-          color: #212529;
+           color: #212529;
+            background: rgba(0, 0, 0, 0.04);
+        }
+        .password-toggle:focus-visible {
+          outline: 2px solid #1a1a2e;
+          outline-offset: 1px;
         }
         .password-field-wrapper {
           position: relative;
