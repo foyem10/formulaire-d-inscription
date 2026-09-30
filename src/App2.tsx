@@ -105,18 +105,6 @@ function App() {
 
   const passwordStrength = getPasswordStrength(Password)
 
-  function isFormValid(): boolean {
-    return (
-      getNomError(Nom) === '' &&
-      getAgeError(Age) === '' &&
-      getLieuError(Lieu) === '' &&
-      getTelError(Tel) === '' &&
-      getEmailError(Email) === '' &&
-      getProfessionError(Profession) === '' &&
-      getPasswordError(Password) === '' &&
-      getPassword2Error(Password2, Password) === ''
-    )
-  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
